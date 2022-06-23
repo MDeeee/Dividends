@@ -1,0 +1,59 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.popover-body {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.popover-body .btn.btn-default {
+    border-color: rgba(0, 0, 0, 0.18);
+}
+
+.popover-body .confirm_msg { font-size: 16px;}
+
+table tbody tr { background-color: #ffffff }
+
+.table-list-move { transition: transform 0.6s }
+
+.table-list-enter-active,
+.table-list-leave-active { transition: opacity 0.6s, transform 0.6s; }
+
+@for $i from 1 through 20 {
+    .table-list-enter-active:nth-child(n+#{$i+1}) {
+        transition: opacity 0.6s unquote('0.') + $i+1 + unquote('s'),
+                    transform 0.6s unquote('0.') + $i+1 + unquote('s')
+    }
+}
+
+.table-list-enter {
+    opacity: 0;
+    transform: translateX(-160px);
+}
+
+.table-list-enter-to,
+.table-list-leave {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.table-list-leave-to {
+    opacity: 0;
+    transform: translateX(260px);
+}
+
+.dark-layout .empty_filtered p,
+.dark-layout .empty_records p {
+    color: #ffffff;
+}
+
+@keyframes showFilterMSG {to { opacity: 1 }}
+
+.empty_filtered {
+    opacity: 0;
+    animation: showFilterMSG 0.5s 0.51s forwards;
+}
+
+.apexcharts-toolbar {
+    z-index: 1 !important;
+}
